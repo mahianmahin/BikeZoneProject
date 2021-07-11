@@ -1,0 +1,39 @@
+@media (max-width: 1000px) {
+    #first-banner {
+        display: none;
+    }
+
+    .hero_search_box {
+        display: none;
+    }
+
+    .hero-txt {
+        width: 100%;
+    }
+
+    .sticky-nav {
+        top: 0px;
+    }
+}
+
+@media (max-width: 770px) {
+    #toggler {
+        display: block;
+    }
+
+    .nav_links {
+        display: none;
+    }
+}
+
+@media (max-width: 1230px) {
+    .card-location {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 650px) {
+    .red-box {
+        display: none;
+    }
+}
