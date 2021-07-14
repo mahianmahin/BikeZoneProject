@@ -24,6 +24,9 @@
     .nav_links {
         display: none;
     }
+
+    .bike-name, .bike-price {
+        font-size: 18px;
 }
 
 @media (max-width: 1230px) {
@@ -35,5 +38,21 @@
 @media (max-width: 650px) {
     .red-box {
         display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    .features-block {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .features-block {
+        font-size: 10px;
     }
 }

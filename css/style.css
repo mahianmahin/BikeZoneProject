@@ -589,3 +589,47 @@ hr {
 .about-text p {
     /* text-align: justify; */
 }
+
+/* ================ About page ends here ================ */
+
+/* ========= Details page section ============= */
+.bike-name {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.bike-name span {
+    font-size: 14px;
+    color: rgb(155, 155, 155);
+}
+
+.bike-price {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(226, 0, 0);
+}
+
+.features-block {
+    width: 500px;
+}
+
+.features-list {
+    color: gray;
+}
+
+.features-list div {
+    border-bottom: 1px dotted rgb(198, 198, 198);
+}
+
+.features-list div:last-child {
+    border-bottom: none;
+}
+
+.features-block button {
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+}
+
+
+/* ========= Details page section ============= */
