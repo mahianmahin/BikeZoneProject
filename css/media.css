@@ -55,4 +55,57 @@
     .features-block {
         font-size: 10px;
     }
+
+    .filter-find-btn {
+        margin-top: 10px !important;
+        width: 270px !important;
+    }
+
+    .login-card {
+        width: 300px;
+        position: relative;
+        top: 280px;
+        padding: 10px !important;
+    }
+
+    .login-card p {
+        font-size: 14px;
+    }
+
+    .login-card img {
+        width: 120px !important;
+    }
+    .login-card h5 {
+        font-size: 16px;
+    }
+
+    .form-element {
+        padding: 5px !important;
+        padding-left: 10px !important;
+        height: 40px;
+    }
+    .login-btn {
+        height: 40px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 426px) {
+    .row-fields {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact-utilities {
+        width: 300px;
+        font-size: 14px;
+    }
+
+    .login-card {
+        width: 400px;
+    }
+
+    .login-card img {
+        width: 150px;
+    }
 }

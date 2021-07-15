@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kawasaki Ninja - Bike details | BikeZone</title>
+    <title>Search bikes with filters | BikeZone</title>
     <link rel="shortcut icon" type="image/icon" href="./img/icon-bike.ico"/>
 
     <!-- Bootstrap cdn -->
@@ -125,87 +125,162 @@
             <div class="container hero-section">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
-                        <h1 style="font-weight: bold; font-size: 30px;">Kawasaki Ninja</h1><br>
+                        <h1 style="font-weight: bold; font-size: 30px;">SEARCH BIKES</h1><br>
                     </div>
 
             <!-- ================================= Hero section =========================-->
         </header>
+        <div class="container-fluid filter-bg py-3">
+            <div class="container filter-items d-flex flex-row flex-wrap justify-content-between align-items-center">
+                <select>
+                    <option selected disabled>Brand</option>
+                    <option>Yamaha</option>
+                    <option>Ducati</option>
+                    <option>Honda</option>
+                    <option>BMW</option>
+                </select>
+
+                <select>
+                    <option selected disabled>Model</option>
+                    <option>Ducati</option>
+                    <option>Honda</option>
+                    <option>BMW</option>
+                    <option>Yamaha</option>
+                </select>
+
+                <select>
+                    <option selected disabled>Location</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Bangladesh</option>
+                </select>
+
+                <select>
+                    <option selected disabled>Year</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                </select>
+
+                <select>
+                    <option selected disabled>Select Type of Bikes</option>
+                    <option>Standard</option>
+                    <option>Cruiser</option>
+                    <option>Sport Bike</option>
+                    <option>Touring</option>
+                </select>
+                <input type="number" name="price-min" placeholder="Min range (USD)">
+                <input type="number" name="price-min" placeholder="Max range (USD)">
+                <a href="#"><button class="btn btn-dark filter-find-btn"><i class="fas fa-search"></i> &nbsp;FIND</button></a>
+            </div>
+        </div>
+
+        <!--========================= Main body starts from here ===========================-->
 
         <div class="container">
-            <section class="details-section d-flex flex-row flex-wrap justify-content-center mt-5">
-                <div class="col-sm-7 details-block px-2 my-3">
-                    <div class="bike-name-price d-flex flex-row justify-content-between flex-wrap">
-                        <div class="bike-name">
-                            Kawasaki Ninja<br> 
-                            <span><i class="fas fa-map-marker-alt"></i>&nbsp;New Eskaton Road, Dhaka 1000</span>
+            <!-- =============== Latest bikes section ==================== -->
+
+            <section class="latest-bikes text-center mt-5">
+                <span class="section-header mt-5">Here's your <span style="color: red;">Bikes</span></span>
+                <br><br>
+                <p>A world class collection of some awesome bikes for you to choose</p>
+
+                <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
+
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="./img/bikes/bike-1.jpg" alt="" class="img-thumbnail"></a>
                         </div>
-                        <div class="bike-price">
-                            $&nbsp;4,999
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bike-image mt-3">
-                        <img src="./img/bikes/bike-1.jpg" class="img-fluid">
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="./img/bikes/bike-2.jpg" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bike-description mt-3">
-                        <h4>Description</h4>
-                        <p>Kawasaki Ninja 300 is powered by 296 cc engine.This Ninja 300 engine generates a power of 
-                            39 PS @ 11000 rpm and a torque of 26.1 Nm @ 10000 rpm. The claimed mileage of Ninja 300 i
-                            s 32.1 kmpl. Kawasaki Ninja 300 gets Disc brakes in the front and rear. 
-                            The kerb weight of Ninja 300 is 179 Kg. Kawasaki Ninja 300 has Tubeless Tyre and Alloy Wheels.</p>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="./img/bikes/bike-3.jpg" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="./img/bikes/bike-4.jpg" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="./img/bikes/bike-5.jpg" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="./img/bikes/bike-6.jpg" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="col-sm-5 features-block px-5 py-5 mx-3 my-3 shadow">
-                    <h4>Refine Your Search</h4>
-                    <div class="features-list d-flex flex-column mt-5">
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Eigine Type :</span>
-                            <span>Liquid-cooled, 4-stroke Parallel Twin</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Engine Displacement :</span>
-                            <span>296 CC</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Max Power :</span>
-                            <span>39 PS @ 11000 rpm</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Emission Type :</span>
-                            <span>bs6</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Max Torque :</span>
-                            <span>26.1 Nm @ 10000 rpm</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Stroke :</span>
-                            <span>49 mm</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>No of Cylinders :</span>
-                            <span>2</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Valve per Cylinder :</span>
-                            <span>4</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Fuel Type :</span>
-                            <span>Petrol</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Compression Ratio :</span>
-                            <span>10.6:1</span>
-                        </div>
-                        <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
-                            <span>Ignition :</span>
-                            <span>Digital</span>
-                        </div>
-                    </div>
-                    <a href="#"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add to Cart</button></a>
+            </section>
+
+            <section class="pagination-bar my-5 d-flex justify-content-center">
+                <div class="pagination-main-block d-flex flex-row justify-content-between">
+                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-left"></i></a>
+                    <a href="#" class="d-flex justify-content-center align-items-center active-page">1</a>
+                    <a href="#" class="d-flex justify-content-center align-items-center">2</a>
+                    <a href="#" class="d-flex justify-content-center align-items-center">3</a>
+                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-right"></i></a>
                 </div>
             </section>
+            <!-- =============== Latest bikes section ==================== -->
         </div>
 
 

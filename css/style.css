@@ -633,3 +633,182 @@ hr {
 
 
 /* ========= Details page section ============= */
+
+/* ========= Bikes Page ========== */
+
+.pagination-main-block a {
+    margin: 5px;
+    /* padding: 10px; */
+}
+
+
+
+.pagination-main-block a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background:#fff;
+    color: black;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pagination-main-block .active-page {
+    background: red;
+    color: #fff;
+}
+
+.pagination-main-block a:hover {
+    background: red;
+    color: #fff;
+}
+
+
+/* ========= Bikes Page ========== */
+
+/* ======= Contact page ======== */
+
+.form-control {
+    margin: 5px !important;
+    outline: none !important;
+}
+
+.form-submit-btn {
+    padding: 10px !important;
+    margin: 10px !important;
+    /* max-width: 400px; */
+    height: 40px;
+}
+
+.row-fields {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.contact-page-icon {
+    font-size: 35px;
+    margin: 10px;
+}
+
+.contact-utilities {
+    width: 400px;
+    border-radius: 4px;
+}
+/* ======= Contact page ======== */
+
+/* ========== Dashboard ========= */
+
+.view-btn {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+/* ========== Dashboard ========= */
+
+/* =========== Login page ========== */
+
+.login-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    min-height: 516px;
+    border-radius: 4px;
+}
+
+.login-card img {
+    width: 200px;
+    height: fit-content;
+}
+
+.form-element .login-icon {
+    font-size: 25px;
+}
+
+.form-element input {
+    border: none;
+}
+
+.form-element {
+    padding: 10px;
+    height: 50px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+
+.login-btn {
+    width: 140px;
+    height: 50px;
+}
+
+.social-login a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+}
+
+#fb-login {
+    background: #3B589E;
+    color: #fff;
+}
+
+#fb-login:hover {
+    color: #fff;
+}
+
+.login-card p a {
+    text-decoration: none;
+    color: red;
+}
+
+/* =========== Login page ========== */
+
+/* =========== Search page =========== */
+
+.filter-bg {
+    background: red;
+    color: #fff;
+}
+
+.filter-items select, .filter-items input, .filter-items button {
+    width: 300px;
+    padding-left: 10px;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid rgba(99, 99, 99, 0.3);
+    border-radius: 4px;
+    outline: none;
+}
+
+.filter-find-btn {
+    margin-top: 10px !important;
+}
+/* =========== Search page =========== */
+
+/* =========== Services page =========== */
+
+.service-card {
+    width: 400px;
+    height: 240px;
+    background: #fff;
+    border-radius: 4px;
+    margin: 5px;
+    
+}
+
+.service-icon {
+    font-size: 40px;
+    color: red;
+}
+
+/* =========== Services page =========== */
