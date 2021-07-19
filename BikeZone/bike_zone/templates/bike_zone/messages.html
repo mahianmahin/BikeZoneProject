@@ -1,0 +1,35 @@
+{% if messages %}
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-primary d-flex justify-content-center message-box w-100" role="alert">
+                    {{message}}
+                </div>
+            </div>
+        {% endif %}
+        
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-success d-flex justify-content-center message-box w-100" role="alert">
+                    {{message}}
+                </div>
+            </div>
+        {% endif %}
+        
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-warning d-flex justify-content-center message-box w-100" role="alert">
+                    {{message}}
+                </div>
+            </div>
+        {% endif %}
+        
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-danger d-flex justify-content-center message-box w-100" role="alert">
+                    {{message}}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}

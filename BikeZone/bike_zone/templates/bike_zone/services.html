@@ -1,0 +1,124 @@
+{% extends 'bike_zone/base.html' %}
+{% load static %}
+
+{% block title %} Our services | BikeZone {% endblock title %}
+
+{% block content %}
+        <header class="notIndex">
+            {% include 'bike_zone/navbar.html' %}
+
+            <!-- ================================= Hero section =========================-->
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <!-- =============================== Scroll to top button section ===================== -->
+        
+
+            <div class="container hero-section">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
+                        <h1 style="font-weight: bold; font-size: 30px;">OUR SERVICES</h1><br>
+                    </div>
+
+            <!-- ================================= Hero section =========================-->
+        </header>
+
+        <!--========================= Main body starts from here ===========================-->
+
+        <div class="container">
+            <!-- =============== Latest bikes section ==================== -->
+
+            <section class="latest-bikes text-center mt-5">
+                <span class="section-header mt-5">Services we <span style="color: red;">Provide</span></span>
+                <br><br>
+                <p>Services we provide to ensure the best quality of your bike</p>
+
+                <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
+
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-headset service-icon"></i>
+                        <h4 class="mt-3">Free Support</h4>
+                        <p class="service-txt">
+                            To make your experience better with us, we are available 24/7 to help you. Whenever you need we are here.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-shipping-fast service-icon"></i>
+                        <h4 class="mt-3">Super Fast</h4>
+                        <p class="service-txt">
+                            We provide all our services at a super fast speed. We deliver our costumers' products at the speed of light.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-tools service-icon"></i>
+                        <h4 class="mt-3">Repairing</h4>
+                        <p class="service-txt">
+                            All spare parts are available here with us. We provide all kinds of repairing services.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-store service-icon"></i>
+                        <h4 class="mt-3">Our Showrooms</h4>
+                        <p class="service-txt">
+                            We have set our showrooms across the world. Where ever you are, you will find us near you.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-gas-pump service-icon"></i>
+                        <h4 class="mt-3">Oil Change</h4>
+                        <p class="service-txt">
+                            We provide oil changing service to keep your bike running well. 
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-cogs service-icon"></i>
+                        <h4 class="mt-3">Engine Repairing</h4>
+                        <p class="service-txt">
+                            We are here to repair your bikes engine. We use the best quality of tools to repair engines.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-key service-icon"></i>
+                        <h4 class="mt-3">Dealership</h4>
+                        <p class="service-txt">
+                            We deal with the biggest companies to ensure your bikes quality.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-lock service-icon"></i>
+                        <h4 class="mt-3">Security</h4>
+                        <p class="service-txt">
+                            Your bikes security is our concern. We work our best to ensure your bikes security.
+                        </p>
+                    </div>
+                    
+                    <div class="service-card shadow d-flex flex-column align-items-center px-3 py-3">
+                        <i class="fas fa-handshake service-icon"></i>
+                        <h4 class="mt-3">Trusted Agents</h4>
+                        <p class="service-txt">
+                            Our agents are fully trusted and guaranteed. Deal with them without any hesitation.
+                        </p>
+                    </div>
+
+                    
+
+                </div>
+
+            </section>
+
+            <!-- =============== Latest bikes section ==================== -->
+        </div>
+
+
+{% endblock content %}

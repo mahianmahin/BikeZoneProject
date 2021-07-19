@@ -1,0 +1,97 @@
+{% extends 'bike_zone/base.html' %}
+{% load static %}
+
+{% block title %} Contact Us | BikeZone {% endblock title %}
+
+{% block content %}
+
+
+        <header class="notIndex">
+            {% include 'bike_zone/navbar.html' %}
+
+            <!-- ================================= Hero section =========================-->
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <!-- =============================== Scroll to top button section ===================== -->
+        
+
+            <div class="container hero-section">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
+                        <h1 style="font-weight: bold; font-size: 30px;">CONTACT US</h1><br>
+                    </div>
+
+            <!-- ================================= Hero section =========================-->
+        </header>
+
+        <!--========================= Main body starts from here ===========================-->
+
+        <div class="container">
+            <!-- =============== Latest bikes section ==================== -->
+
+            <section class="latest-bikes text-center my-5">
+                <span class="section-header mt-5">Contact <span style="color: red;">Us</span></span>
+                <br><br>
+                <p>Contact us without hesitation for any help, we'll be there to help you 24/7</p>
+                <div class="row mt-5">
+                    <div class="col-sm-8 contact-form-section px-2">
+                        <div class="form-body">
+                            <form class="form-group px-2">
+                                <div class="row-fields">
+                                    <input type="text" class="form-control" placeholder="Full Name">
+                                    <input type="text" class="form-control" placeholder="Email"> 
+                                </div>
+                                <div class="row-fields">
+                                    <input type="text" class="form-control" placeholder="Subject">
+                                    <input type="number" class="form-control" placeholder="Phone Number">
+                                </div>
+                                <textarea class="form-control" placeholder="Write message" cols="30" rows="10"></textarea>
+                                <input type="submit" class="btn btn-danger form-submit-btn" value="SEND MESSAGE">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 contact-utilities shadow bg-white px-2 mx-2 py-5">
+                        <div class="info-set d-flex flex-column">
+                            <div class="d-flex flex-row align-items-center my-3">
+                                <span><i class="fas fa-phone-alt contact-page-icon"></i></span>
+                                <div class="d-flex flex-column align-items-start mx-2">
+                                    <span><b>Phone</b></span>
+                                    <span>+880 1762142364</span>
+                                </div> 
+                            </div>
+                            <div class="d-flex flex-row align-items-center my-3">
+                                <span><i class="fas fa-envelope contact-page-icon"></i></span>
+                                <div class="d-flex flex-column align-items-start mx-2">
+                                    <span><b>Mail</b></span>
+                                    <span>mahianmahin@yahoo.com</span>
+                                </div> 
+                            </div>
+                            <div class="d-flex flex-row align-items-center my-3">
+                                <span><i class="fab fa-chrome contact-page-icon"></i></span>
+                                <div class="d-flex flex-column align-items-start mx-2">
+                                    <span><b>Web</b></span>
+                                    <span>www.bikezone.com</span>
+                                </div> 
+                            </div>
+                            <div class="d-flex flex-row align-items-center my-3">
+                                <span><i class="fas fa-fax contact-page-icon"></i></span>
+                                <div class="d-flex flex-column align-items-start mx-2">
+                                    <span><b>Fax</b></span>
+                                    <span>+880 1762142364</span>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =============== Latest bikes section ==================== -->
+        </div>
+
+
+{% endblock content %}

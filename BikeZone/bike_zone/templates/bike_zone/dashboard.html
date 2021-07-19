@@ -1,0 +1,76 @@
+{% extends 'bike_zone/base.html' %}
+{% load static %}
+
+{% block title %} Dashboard - User | BikeZone {% endblock title %}
+
+{% block content %}
+
+        {% include 'bike_zone/messages.html' %}
+
+        <header class="notIndex">
+            {% include 'bike_zone/navbar.html' %}
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <!-- =============================== Scroll to top button section ===================== -->
+        
+
+            <div class="container hero-section">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
+                        <h1 style="font-weight: bold; font-size: 30px;">DASHBOARD</h1><br>
+                    </div>
+
+            <!-- ================================= Hero section =========================-->
+        </header>
+
+        <!--========================= Main body starts from here ===========================-->
+
+        <div class="container">
+            <!-- =============== Latest bikes section ==================== -->
+            <section class="mt-5 mx-2">
+                <span class="section-header mt-5">Welcome <span style="color: red;">{{request.user}}</span></span>
+                <p>Here are the bikes that you have inquired about</p>
+
+                <div class="row my-5">
+                    <div class="col-sm-12 info-table">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">Bike Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Kawasaki Ninja</td>
+                                <td>$ 4,999</td>
+                                <td><button class="btn btn-dark view-btn">View</button></td>
+                              </tr>
+                              <tr>
+                                <td>Kawasaki Ninja</td>
+                                <td>$ 4,999</td>
+                                <td><button class="btn btn-dark view-btn">View</button></td>
+                              </tr>
+                              <tr>
+                                <td>Kawasaki Ninja</td>
+                                <td>$ 4,999</td>
+                                <td><button class="btn btn-dark view-btn">View</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =============== Latest bikes section ==================== -->
+        </div>
+
+
+{% endblock content %}
+

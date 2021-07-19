@@ -1,0 +1,353 @@
+{% extends 'bike_zone/base.html' %}
+{% load static %}
+
+{% block title %} Home | BikeZone {% endblock title %}
+
+{% block content %}
+        <header class="index">
+            {% include 'bike_zone/messages.html' %}
+            {% include 'bike_zone/navbar.html' %}
+
+            <!-- ================================= Hero section =========================-->
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="container hero-section">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 hero-txt d-flex flex-column justify-content-center text-white">
+                        <h1 style="font-weight: bold; font-size: 40px;">WOW FACTOR STANDARD</h1><br>
+                        <p style="font-size: 18px;">Allow us to guide you through the innovative stress <br>
+                        free approach in finding your dream bike.</p>
+                        <a href="#"><button class="btn custom_btn">Read more</button></a>
+                    </div>
+                    <div class="col-md-6 col-sm-0  d-flex justify-content-center align-items-center hero-search-box">
+                        <div class="hero_search_box">
+                            <form class="form-group">
+                                <input type="text" class="form-control text-field" placeholder="Search by name">
+                                <select>
+                                    <option selected disabled>Brand</option>
+                                    <option>Yamaha</option>
+                                    <option>Ducati</option>
+                                    <option>Honda</option>
+                                    <option>BMW</option>
+                                </select>
+                                <select>
+                                    <option selected disabled>Model</option>
+                                    <option>Ducati</option>
+                                    <option>Honda</option>
+                                    <option>BMW</option>
+                                    <option>Yamaha</option>
+                                </select>
+                                <select>
+                                    <option selected disabled>Location</option>
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Bangladesh</option>
+                                </select>
+                                <select>
+                                    <option selected disabled>Year</option>
+                                    <option>2018</option>
+                                    <option>2019</option>
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                </select>
+                                <select>
+                                    <option selected disabled>Select Type of Bikes</option>
+                                    <option>Standard</option>
+                                    <option>Cruiser</option>
+                                    <option>Sport Bike</option>
+                                    <option>Touring</option>
+                                </select>
+                            </form><br>
+                            <p><b style="color: rgb(110, 110, 110);">Price</b></p>
+                            <div class="d-flex flex-row justify-content-between align-items-center">
+                                <input type="number" class="price-class" placeholder="Min range (USD)">
+                                <p><b>-</b></p>
+                                <input type="number" class="price-class" placeholder="Max range (USD)">
+                            </div>
+                            <button class="hero_search_box-search-btn"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================================= Hero section =========================-->
+        </header>
+
+        <!--========================= Main body starts from here ===========================-->
+
+        <div class="container">
+        <!-- ================ Featured bikes section ==================== -->
+            <section class="featured-bikes text-center section-margin">
+                <span class="section-header">Featured <span style="color: red;">Bikes</span></span>
+                <p>A world class collection of some awesome bikes for you to choose</p>
+
+                <div class="owl-carousel owl-theme featured-slider">
+                    <div class="item">    
+                        <div class="card-body shadow">
+                            <div class="card-thumb">
+                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="card-details">
+                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">New Shop</div>
+                                    <div class="card-price">$ 3,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">    
+                        <div class="card-body shadow">
+                            <div class="card-thumb">
+                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-2.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="card-details">
+                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">New Shop</div>
+                                    <div class="card-price">$ 3,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">    
+                        <div class="card-body shadow">
+                            <div class="card-thumb">
+                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-3.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="card-details">
+                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">New Shop</div>
+                                    <div class="card-price">$ 3,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">    
+                        <div class="card-body shadow">
+                            <div class="card-thumb">
+                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-4.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="card-details">
+                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">New Shop</div>
+                                    <div class="card-price">$ 3,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">    
+                        <div class="card-body shadow">
+                            <div class="card-thumb">
+                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-5.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="card-details">
+                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">New Shop</div>
+                                    <div class="card-price">$ 3,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">    
+                        <div class="card-body shadow">
+                            <div class="card-thumb">
+                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-6.jpg' %}" alt=""></a>
+                            </div>
+                            <div class="card-details">
+                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">New Shop</div>
+                                    <div class="card-price">$ 3,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =============== Latest bikes section ==================== -->
+
+            <section class="latest-bikes text-center">
+                <span class="section-header mt-5">Latest <span style="color: red;">Bikes</span></span>
+                <br><br>
+                <p>A world class collection of some awesome bikes for you to choose</p>
+
+                <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
+
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-2.jpg' %}" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-3.jpg' %}" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-4.jpg' %}" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-5.jpg' %}" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shadow latest-bikes-card">
+                        <div class="latest-bike-thumb">
+                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-6.jpg' %}" alt="" class="img-thumbnail"></a>
+                        </div>
+                        <div class="card-details" id="latest-details">
+                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                <div class="card-shop">New Shop</div>
+                                <div class="card-price">$ 3,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- =============== Latest bikes section ==================== -->
+
+
+            <!-- =============== Excutive Team section ==================== -->
+
+            <section class="text-center my-5">
+                <span class="section-header mt-5">Executive <span style="color: red;">Team</span></span>
+                <br><br>
+                <p>The people behind the way of your dream bike to you</p>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-mahin.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Mahian Mahin</h4></div>
+                            <div class="team-designation"><p>Web Developer</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-9.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Angela Moss</h4></div>
+                            <div class="team-designation"><p>Web Developer</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-11.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>James Smith</h4></div>
+                            <div class="team-designation"><p>Graphics Designer</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-12.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Trevor Philips</h4></div>
+                            <div class="team-designation"><p>Marketing Head</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-10.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Patricia</h4></div>
+                            <div class="team-designation"><p>Support Manager</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =============== Excutive Team section ==================== -->
+        </div>
+{% endblock content %}
+
+            

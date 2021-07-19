@@ -1,0 +1,115 @@
+{% extends 'bike_zone/base.html' %}
+{% load static %}
+
+{% block title %} About | BikeZone {% endblock title %}
+
+{% block content %}
+        <header class="notIndex">
+            {% include 'bike_zone/navbar.html' %}
+
+            <!-- ================================= Hero section =========================-->
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <!-- =============================== Scroll to top button section ===================== -->
+        
+
+            <div class="container hero-section">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
+                        <h1 style="font-weight: bold; font-size: 30px;">ABOUT</h1><br>
+                    </div>
+
+            <!-- ================================= Hero section =========================-->
+        </header>
+
+        <div class="container">
+
+            <section class="text-center my-5 mx-5 mt-5">
+                <div class="about-text">
+                    <span class="section-header mt-5">Welcome to <span style="color: red;">Bike Zone</span></span>
+                    <br><br>
+                    <p>Hey there, this is a practice project of mine. An online bike selling e-commerce web application 
+                    developed by me using <b>Front end technologies: HTML, CSS, Bootstrap, Javascript </b> and <b>Back end 
+                    technologies: Django and sqlite3</b></p>
+                </div>
+            </section>
+
+            <!-- =============== Excutive Team section ==================== -->
+
+            <section class="text-center my-5">
+                <span class="section-header mt-5">Executive <span style="color: red;">Team</span></span>
+                <br><br>
+                <p>The people behind the way of your dream bike to you</p>
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-mahin.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Mahian Mahin</h4></div>
+                            <div class="team-designation"><p>Web Developer</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-9.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Angela Moss</h4></div>
+                            <div class="team-designation"><p>Web Developer</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-11.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>James Smith</h4></div>
+                            <div class="team-designation"><p>Graphics Designer</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-12.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Trevor Philips</h4></div>
+                            <div class="team-designation"><p>Marketing Head</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-flex justify-content-center">
+                        <div class="team-body shadow">
+                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-10.jpg' %}" class="img-thumbnail" alt=""></div>
+                            <div class="team-name mt-4"><h4>Patricia</h4></div>
+                            <div class="team-designation"><p>Support Manager</p></div>
+                            <div class="team-social-links d-flex flex-row justify-content-center">
+                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =============== Excutive Team section ==================== -->
+        </div>
+
+{% endblock content %}
