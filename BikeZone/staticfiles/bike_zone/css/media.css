@@ -1,0 +1,120 @@
+@media (max-width: 1000px) {
+    #first-banner {
+        display: none;
+    }
+
+    .hero_search_box {
+        display: none;
+    }
+
+    .hero-txt {
+        width: 100%;
+    }
+
+    .sticky-nav {
+        top: 0px;
+    }
+}
+
+@media (max-width: 770px) {
+    #toggler {
+        display: block;
+    }
+
+    .nav_links {
+        display: none;
+    }
+
+    .bike-name, .bike-price {
+        font-size: 18px;
+}
+
+@media (max-width: 1230px) {
+    .card-location {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 650px) {
+    .red-box {
+        display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    .features-block {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .features-block {
+        font-size: 10px;
+    }
+
+    .filter-find-btn {
+        margin-top: 10px !important;
+        width: 270px !important;
+    }
+
+    .login-card {
+        width: 300px;
+        position: relative;
+        top: 280px;
+        padding: 10px !important;
+    }
+
+    .login-card p {
+        font-size: 14px;
+    }
+
+    .login-card img {
+        width: 120px !important;
+    }
+    .login-card h5 {
+        font-size: 16px;
+    }
+
+    .form-element {
+        padding: 5px !important;
+        padding-left: 10px !important;
+        height: 40px;
+    }
+    .login-btn {
+        height: 40px;
+        width: 100px;
+    }
+}
+
+@media (max-width: 426px) {
+    .row-fields {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contact-utilities {
+        width: 300px;
+        font-size: 14px;
+    }
+
+    .login-card {
+        width: 400px;
+    }
+
+    .login-card img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-thumb a img {
+        padding: 0;
+        height: 240px !important;
+        width: 540px !important;
+        object-fit: cover !important;
+    } 
+}

@@ -2,12 +2,14 @@ from django.contrib import admin
 from django.urls import path, include
 from bike_zone import views as main
 from auth_app import views as authentication
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main.home, name="home"),
     path('about/', main.about, name="about"),
-    path('bike_details/', main.bike_details, name="bike_details"),
+    path('bike_details/<int:id>', main.bike_details, name="bike_details"),
     path('bikes/', main.bikes, name="bikes"),
     path('contact/', main.contact, name="contact"),
     path('dashboard/', main.dashboard, name="dashboard"),
@@ -20,3 +22,6 @@ urlpatterns = [
     # Social accounts login url
     path('socialaccounts/', include('allauth.urls'))
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

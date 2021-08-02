@@ -31,41 +31,37 @@
             <div class="container filter-items d-flex flex-row flex-wrap justify-content-between align-items-center">
                 <select>
                     <option selected disabled>Brand</option>
-                    <option>Yamaha</option>
-                    <option>Ducati</option>
-                    <option>Honda</option>
-                    <option>BMW</option>
+                    {% for item in brand %}
+                    <option>{{item}}</option>
+                    {% endfor %}
                 </select>
 
                 <select>
                     <option selected disabled>Model</option>
-                    <option>Ducati</option>
-                    <option>Honda</option>
-                    <option>BMW</option>
-                    <option>Yamaha</option>
+                    {% for item in model %}
+                    <option>{{item}}</option>
+                    {% endfor %}
                 </select>
 
                 <select>
                     <option selected disabled>Location</option>
-                    <option>United States</option>
-                    <option>United Kingdom</option>
-                    <option>Bangladesh</option>
+                    {% for item in location %}
+                    <option>{{item}}</option>
+                    {% endfor %}
                 </select>
 
                 <select>
                     <option selected disabled>Year</option>
-                    <option>2018</option>
-                    <option>2019</option>
-                    <option>2020</option>
-                    <option>2021</option>
+                    {% for item in year %}
+                    <option>{{item}}</option>
+                    {% endfor %}
                 </select>
 
                 <select>
                     <option selected disabled>Select Type of Bikes</option>
-                    <option>Standard</option>
-                    <option>Cruiser</option>
-                    <option>Sport Bike</option>
-                    <option>Touring</option>
+                    {% for item in type %}
+                    <option>{{item}}</option>
+                    {% endfor %}
                 </select>
                 <input type="number" name="price-min" placeholder="Min range (USD)">
                 <input type="number" name="price-min" placeholder="Max range (USD)">

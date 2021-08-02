@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="contacts">
+                        <div class="contacts d-flex align-items-center">
                             <div class="contact-group">
                                 <div class="contact-items">
                                     <i class="fas fa-phone-alt"></i>
@@ -27,6 +27,12 @@
                             <div class="btn-group">
                                 <a href="{% url 'login' %}"><button class="custom-button"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</button></a>
                                 <a href="{% url 'signup' %}"><button class="custom-button"><i class="fas fa-user"></i>&nbsp;REGISTER</button></a>
+                            </div>
+                            {% endif %}
+
+                            {% if request.user.is_authenticated %}
+                            <div class="btn-group">
+                                <span style="text-transform:uppercase;">Welcome, <span style="color:red;">{{request.user}}</span></span>
                             </div>
                             {% endif %}
                         </div>

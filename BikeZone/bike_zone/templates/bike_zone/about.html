@@ -33,9 +33,9 @@
                 <div class="about-text">
                     <span class="section-header mt-5">Welcome to <span style="color: red;">Bike Zone</span></span>
                     <br><br>
-                    <p>Hey there, this is a practice project of mine. An online bike selling e-commerce web application 
-                    developed by me using <b>Front end technologies: HTML, CSS, Bootstrap, Javascript </b> and <b>Back end 
-                    technologies: Django and sqlite3</b></p>
+                    {% for item in site_utils %}
+                        {{ item.about_text | safe }}
+                    {% endfor %}
                 </div>
             </section>
 

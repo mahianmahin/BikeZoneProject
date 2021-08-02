@@ -32,22 +32,19 @@
                 <div class="col-sm-7 details-block px-2 my-3">
                     <div class="bike-name-price d-flex flex-row justify-content-between flex-wrap">
                         <div class="bike-name">
-                            Kawasaki Ninja<br> 
-                            <span><i class="fas fa-map-marker-alt"></i>&nbsp;New Eskaton Road, Dhaka 1000</span>
+                            {{bikes.bike_name}}<br> 
+                            <span><i class="fas fa-map-marker-alt"></i>&nbsp;{{bikes.bike_location}}</span>
                         </div>
                         <div class="bike-price">
-                            $&nbsp;4,999
+                            $&nbsp;{{bikes.bike_price}}
                         </div>
                     </div>
                     <div class="bike-image mt-3">
-                        <img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" class="img-fluid">
+                        <img src="{{bikes.bike_picture.url}}" class="img-fluid">
                     </div>
                     <div class="bike-description mt-3">
-                        <h4>Description</h4>
-                        <p>Kawasaki Ninja 300 is powered by 296 cc engine.This Ninja 300 engine generates a power of 
-                            39 PS @ 11000 rpm and a torque of 26.1 Nm @ 10000 rpm. The claimed mileage of Ninja 300 i
-                            s 32.1 kmpl. Kawasaki Ninja 300 gets Disc brakes in the front and rear. 
-                            The kerb weight of Ninja 300 is 179 Kg. Kawasaki Ninja 300 has Tubeless Tyre and Alloy Wheels.</p>
+                        <h4 class="my-5">Description</h4>
+                        {{bikes.bike_description | safe }}
                     </div>
                 </div>
 
@@ -56,47 +53,47 @@
                     <div class="features-list d-flex flex-column mt-5">
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Eigine Type :</span>
-                            <span>Liquid-cooled, 4-stroke Parallel Twin</span>
+                            <span>{{bikes.bike_engine_type}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Engine Displacement :</span>
-                            <span>296 CC</span>
+                            <span>{{bikes.bike_engine_displacement}} CC</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Max Power :</span>
-                            <span>39 PS @ 11000 rpm</span>
+                            <span>{{bikes.bike_max_power}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Emission Type :</span>
-                            <span>bs6</span>
+                            <span>{{bikes.bike_emission_type}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Max Torque :</span>
-                            <span>26.1 Nm @ 10000 rpm</span>
+                            <span>{{bikes.bike_max_torque}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Stroke :</span>
-                            <span>49 mm</span>
+                            <span>{{bikes.bike_stroke}} mm</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>No of Cylinders :</span>
-                            <span>2</span>
+                            <span>{{bikes.bike_no_of_cylinders}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Valve per Cylinder :</span>
-                            <span>4</span>
+                            <span>{{bikes.bike_valve_per_cylinder}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Fuel Type :</span>
-                            <span>Petrol</span>
+                            <span>{{bikes.bike_fuel_type}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Compression Ratio :</span>
-                            <span>10.6:1</span>
+                            <span>{{bikes.bike_compression_ratio}}</span>
                         </div>
                         <div class="feature-item d-flex flex-row justify-content-between my-2 py-2">
                             <span>Ignition :</span>
-                            <span>Digital</span>
+                            <span>{{bikes.bike_ignition}}</span>
                         </div>
                     </div>
                     <a href="#"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add to Cart</button></a>

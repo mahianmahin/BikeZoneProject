@@ -32,38 +32,39 @@
                                 <input type="text" class="form-control text-field" placeholder="Search by name">
                                 <select>
                                     <option selected disabled>Brand</option>
-                                    <option>Yamaha</option>
-                                    <option>Ducati</option>
-                                    <option>Honda</option>
-                                    <option>BMW</option>
+                                    {% for item in brand %}
+                                    <option>{{item}}</option>
+                                    {% endfor %}
                                 </select>
+                                
                                 <select>
                                     <option selected disabled>Model</option>
-                                    <option>Ducati</option>
-                                    <option>Honda</option>
-                                    <option>BMW</option>
-                                    <option>Yamaha</option>
+                                    {% for item in model %}
+                                    <option>{{item}}</option>
+                                    {% endfor %}
                                 </select>
+                                
                                 <select>
                                     <option selected disabled>Location</option>
-                                    <option>United States</option>
-                                    <option>United Kingdom</option>
-                                    <option>Bangladesh</option>
+                                    {% for item in location %}
+                                    <option>{{item}}</option>
+                                    {% endfor %}
                                 </select>
+                                
                                 <select>
                                     <option selected disabled>Year</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                    <option>2021</option>
+                                    {% for item in year %}
+                                    <option>{{item}}</option>
+                                    {% endfor %}
                                 </select>
+                                
                                 <select>
                                     <option selected disabled>Select Type of Bikes</option>
-                                    <option>Standard</option>
-                                    <option>Cruiser</option>
-                                    <option>Sport Bike</option>
-                                    <option>Touring</option>
+                                    {% for item in type %}
+                                    <option>{{item}}</option>
+                                    {% endfor %}
                                 </select>
+                            
                             </form><br>
                             <p><b style="color: rgb(110, 110, 110);">Price</b></p>
                             <div class="d-flex flex-row justify-content-between align-items-center">
@@ -89,96 +90,26 @@
                 <p>A world class collection of some awesome bikes for you to choose</p>
 
                 <div class="owl-carousel owl-theme featured-slider">
-                    <div class="item">    
-                        <div class="card-body shadow">
-                            <div class="card-thumb">
-                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="card-details">
-                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">New Shop</div>
-                                    <div class="card-price">$ 3,000</div>
+                {% for bike in bikes %}
+                    {% if bike.bike_is_featured %}
+                        <div class="item">    
+                            <div class="card-body shadow">
+                                <div class="card-thumb">
+                                    <a href="{% url 'bike_details' bike.id %}"><img src="{{bike.bike_picture.url}}"></a>
+                                </div>
+                                <div class="card-details">
+                                    <a href="#"><div class="card-title">{{bike.bike_name}}</div></a>
+                                    <div class="card-location"><i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}</div>
+                                    <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                        <div class="card-shop">BikeShopBD</div>
+                                        <div class="card-price">$ {{bike.bike_price}}</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">    
-                        <div class="card-body shadow">
-                            <div class="card-thumb">
-                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-2.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="card-details">
-                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">New Shop</div>
-                                    <div class="card-price">$ 3,000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">    
-                        <div class="card-body shadow">
-                            <div class="card-thumb">
-                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-3.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="card-details">
-                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">New Shop</div>
-                                    <div class="card-price">$ 3,000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">    
-                        <div class="card-body shadow">
-                            <div class="card-thumb">
-                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-4.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="card-details">
-                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">New Shop</div>
-                                    <div class="card-price">$ 3,000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">    
-                        <div class="card-body shadow">
-                            <div class="card-thumb">
-                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-5.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="card-details">
-                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">New Shop</div>
-                                    <div class="card-price">$ 3,000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">    
-                        <div class="card-body shadow">
-                            <div class="card-thumb">
-                                <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-6.jpg' %}" alt=""></a>
-                            </div>
-                            <div class="card-details">
-                                <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">New Shop</div>
-                                    <div class="card-price">$ 3,000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endif %}
+                {% endfor %}
+
                 </div>
             </section>
 
@@ -190,86 +121,23 @@
                 <p>A world class collection of some awesome bikes for you to choose</p>
 
                 <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
-
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
+                {% for bike in bikes %}
+                    {% if bike.bike_is_latest %}
+                        <div class="shadow latest-bikes-card">
+                            <div class="latest-bike-thumb">
+                                <a href="{% url 'bike_details' bike.id %}"><img src="{{bike.bike_picture.url}}" alt="" class="img-thumbnail"></a>
+                            </div>
+                            <div class="card-details" id="latest-details">
+                                <a href="{% url 'bike_details' bike.id %}"><div class="card-title">{{bike.bike_name}}</div></a>
+                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}</div>
+                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
+                                    <div class="card-shop">BikeShopBD</div>
+                                    <div class="card-price">$ {{bike.bike_price}}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-2.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-3.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-4.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-5.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-6.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-
+                    {% endif %}
+                {% endfor %}
                 </div>
 
             </section>
