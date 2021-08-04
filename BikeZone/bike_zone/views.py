@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib import messages
 from .models import SiteUtils, Bikes
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 # Create your views here.
 
@@ -72,7 +73,16 @@ def bike_details(request, id):
     return render(request, 'bike_zone/bike-details.html', data)
 
 def bikes(request):
-    return render(request, 'bike_zone/bikes.html')
+    bikes = Bikes.objects.all()
+    
+    paginator = Paginator(bikes, 6)
+    page = request.GET.get('page')
+    paged_bikes = paginator.get_page(page)
+    
+    data = {
+        'bikes': paged_bikes
+    }
+    return render(request, 'bike_zone/bikes.html', data)
 
 def contact(request):
     return render(request, 'bike_zone/contact.html')

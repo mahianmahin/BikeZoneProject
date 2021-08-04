@@ -23,7 +23,7 @@
             <div class="container hero-section">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
-                        <h1 style="font-weight: bold; font-size: 30px;">OUR BIKE INVENTORY</h1><br>
+                        <h1 style="font-weight: bold; font-size: 30px; text-align: center">OUR BIKE INVENTORY</h1><br>
                     </div>
 
             <!-- ================================= Hero section =========================-->
@@ -40,99 +40,48 @@
                 <p>A world class collection of some awesome bikes for you to choose</p>
 
                 <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
-
+                {% for bike in bikes %}
                     <div class="shadow latest-bikes-card">
                         <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" alt="" class="img-thumbnail"></a>
+                            <a href="{% url 'bike_details' bike.id %}"><img src="{{bike.bike_picture.url}}" class="img-thumbnail"></a>
                         </div>
                         <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <a href="{% url 'bike_details' bike.id %}"><div class="card-title">{{bike.bike_name}}</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}</div>
                             <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
+                                <div class="card-shop">NewShopBD</div>
+                                <div class="card-price">$ {{bike.bike_price}}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-2.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-3.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-4.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-5.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-6.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
+                {% endfor %}
 
                 </div>
 
             </section>
 
+            {% if bikes.has_other_pages %}
             <section class="pagination-bar my-5 d-flex justify-content-center">
                 <div class="pagination-main-block d-flex flex-row justify-content-between">
-                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-left"></i></a>
-                    <a href="#" class="d-flex justify-content-center align-items-center active-page">1</a>
-                    <a href="#" class="d-flex justify-content-center align-items-center">2</a>
-                    <a href="#" class="d-flex justify-content-center align-items-center">3</a>
-                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-right"></i></a>
+                    
+                    {% if bikes.has_previous %}
+                        <a href="?page={{bikes.previous_page_number}}" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-left"></i></a>
+                    {% endif %}
+
+                    {% for i in bikes.paginator.page_range %}
+                        {% if bikes.number == i %}
+                            <a href="?page={{i}}" class="d-flex justify-content-center align-items-center active-page">{{i}}</a>
+                        {% else %}
+                            <a href="?page={{i}}" class="d-flex justify-content-center align-items-center">{{i}}</a>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if bikes.has_next %}
+                        <a href="?page={{bikes.next_page_number}}" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-right"></i></a>
+                    {% endif %}
                 </div>
             </section>
+            {% endif%}
             <!-- =============== Latest bikes section ==================== -->
         </div>
 

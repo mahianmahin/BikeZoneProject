@@ -1,7 +1,7 @@
 {% extends 'bike_zone/base.html' %}
 {% load static %}
 
-{% block title %} Kawasaki Ninja - Bike Details | BikeZone {% endblock title %}
+{% block title %} {{bikes.bike_name}} - Bike Details | BikeZone {% endblock title %}
 
 {% block content %}
         <header class="notIndex">
@@ -21,7 +21,7 @@
             <div class="container hero-section">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
-                        <h1 style="font-weight: bold; font-size: 30px;">Kawasaki Ninja</h1><br>
+                        <h1 style="font-weight: bold; font-size: 30px; text-align: center">{{bikes.bike_name}}</h1><br>
                     </div>
 
             <!-- ================================= Hero section =========================-->
