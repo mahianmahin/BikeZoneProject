@@ -102,6 +102,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# SMTP Config
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mahianmahin@yahoo.com'
+EMAIL_HOST_PASSWORD = 'grebzdumqthdxxeh'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

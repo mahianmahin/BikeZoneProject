@@ -4,6 +4,8 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from .models import SiteUtils, Bikes
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.core.mail import send_mail, EmailMessage
+from django.conf import settings
 
 # Create your views here.
 
@@ -85,6 +87,19 @@ def bikes(request):
     return render(request, 'bike_zone/bikes.html', data)
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+
+        message_body = "Name: " + name + "\n" + "Phone: " + phone + "\n" + message
+
+        mail = EmailMessage(subject, message_body, to=[settings.EMAIL_HOST_USER])
+        mail.content_subtype = 'html'
+        mail.send()
+
     return render(request, 'bike_zone/contact.html')
 
 def dashboard(request):
