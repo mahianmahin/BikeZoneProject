@@ -28,152 +28,82 @@
             <!-- ================================= Hero section =========================-->
         </header>
         <div class="container-fluid filter-bg py-3">
+        <form method="POST">
+        {% csrf_token %}
             <div class="container filter-items d-flex flex-row flex-wrap justify-content-between align-items-center">
-                <select>
+                <select name="brand">
                     <option selected disabled>Brand</option>
                     {% for item in brand %}
-                    <option>{{item}}</option>
+                    <option value="{{item}}">{{item}}</option>
                     {% endfor %}
                 </select>
 
-                <select>
+                <select name="model">
                     <option selected disabled>Model</option>
                     {% for item in model %}
-                    <option>{{item}}</option>
+                    <option value="{{item}}">{{item}}</option>
                     {% endfor %}
                 </select>
 
-                <select>
+                <select name="location">
                     <option selected disabled>Location</option>
                     {% for item in location %}
-                    <option>{{item}}</option>
+                    <option value="{{item}}">{{item}}</option>
                     {% endfor %}
                 </select>
 
-                <select>
+                <select name="year">
                     <option selected disabled>Year</option>
                     {% for item in year %}
-                    <option>{{item}}</option>
+                    <option value="{{item}}">{{item}}</option>
                     {% endfor %}
                 </select>
 
-                <select>
+                <select name="type">
                     <option selected disabled>Select Type of Bikes</option>
                     {% for item in type %}
-                    <option>{{item}}</option>
+                    <option value="{{item}}">{{item}}</option>
                     {% endfor %}
                 </select>
                 <input type="number" name="price-min" placeholder="Min range (USD)">
-                <input type="number" name="price-min" placeholder="Max range (USD)">
-                <a href="#"><button class="btn btn-dark filter-find-btn"><i class="fas fa-search"></i> &nbsp;FIND</button></a>
+                <input type="number" name="price-max" placeholder="Max range (USD)">
+                {% comment %} <a href="#"><button class="btn btn-dark filter-find-btn"><i class="fas fa-search"></i> &nbsp;FIND</button></a> {% endcomment %}
+                <input type="submit" value="FIND" class="btn btn-dark filter-find-btn">
             </div>
+        </form>
         </div>
 
         <!--========================= Main body starts from here ===========================-->
 
         <div class="container">
             <!-- =============== Latest bikes section ==================== -->
-
+            {% if searched_bikes %}
             <section class="latest-bikes text-center mt-5">
                 <span class="section-header mt-5">Here's your <span style="color: red;">Bikes</span></span>
                 <br><br>
                 <p>A world class collection of some awesome bikes for you to choose</p>
-
+            {% endif %}
                 <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
-
+                    {% for bike in searched_bikes %}
                     <div class="shadow latest-bikes-card">
                         <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-1.jpg' %}" alt="" class="img-thumbnail"></a>
+                            <a href="{% url 'bike_details' bike.id %}"><img src="{{bike.bike_picture.url}}" class="img-thumbnail"></a>
                         </div>
                         <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
+                            <a href="#"><div class="card-title">{{bike.bike_name}}</div></a>
+                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}</div>
                             <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
+                                <div class="card-shop">NewShopBD</div>
+                                <div class="card-price">$ {{bike.bike_price}}</div>
                             </div>
                         </div>
                     </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-2.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-3.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-4.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-5.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shadow latest-bikes-card">
-                        <div class="latest-bike-thumb">
-                            <a href="#"><img src="{% static 'bike_zone/img/bikes/bike-6.jpg' %}" alt="" class="img-thumbnail"></a>
-                        </div>
-                        <div class="card-details" id="latest-details">
-                            <a href="#"><div class="card-title">Kawasaki Ninja</div></a>
-                            <div class="card-location"><i class="fas fa-map-marker-alt"></i> New Eskaton Road, Dhaka 1000</div>
-                            <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                <div class="card-shop">New Shop</div>
-                                <div class="card-price">$ 3,000</div>
-                            </div>
-                        </div>
-                    </div>
-
+                    {% endfor %}
+                    
                 </div>
 
             </section>
 
-            <section class="pagination-bar my-5 d-flex justify-content-center">
-                <div class="pagination-main-block d-flex flex-row justify-content-between">
-                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-left"></i></a>
-                    <a href="#" class="d-flex justify-content-center align-items-center active-page">1</a>
-                    <a href="#" class="d-flex justify-content-center align-items-center">2</a>
-                    <a href="#" class="d-flex justify-content-center align-items-center">3</a>
-                    <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-angle-right"></i></a>
-                </div>
-            </section>
-            <!-- =============== Latest bikes section ==================== -->
         </div>
 
 {% endblock content %}

@@ -4,8 +4,9 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from .models import SiteUtils, Bikes
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from django.core.mail import send_mail, EmailMessage
+from django.core.mail import EmailMessage
 from django.conf import settings
+from django.db.models import Q
 
 # Create your views here.
 
@@ -94,11 +95,19 @@ def contact(request):
         phone = request.POST.get('phone')
         message = request.POST.get('message')
 
-        message_body = "Name: " + name + "\n" + "Phone: " + phone + "\n" + message
+        message_body = "Name: " + name + "\n" + "Phone: " + phone + "\n" + "E-mail: " + email + "\n\n" + message
 
-        mail = EmailMessage(subject, message_body, to=[settings.EMAIL_HOST_USER])
-        mail.content_subtype = 'html'
+        mail = EmailMessage(
+            subject,
+            message_body,
+            settings.EMAIL_HOST_USER,
+            ['mahianmahin@yahoo.com']
+        )
+
         mail.send()
+
+        messages.success(request, 'Mail sent successfully. We will contact you shortly')
+        return redirect('/contact/')
 
     return render(request, 'bike_zone/contact.html')
 
@@ -145,7 +154,8 @@ def search(request):
         else:
             type_of_bike.append(item.bike_type)
 
-    data = {
+    if request.method == "GET":
+        data = {
         'bikes': bikes,
         'brand': brand,
         'model': model,
@@ -153,6 +163,35 @@ def search(request):
         'year': year,
         'type': type_of_bike
     }
+
+    if request.method == "POST":
+        search_brand = request.POST.get('brand')
+        search_model = request.POST.get('model')
+        search_location = request.POST.get('location')
+        search_year = request.POST.get('year')
+        search_type = request.POST.get('type')
+        search_min_price = request.POST.get('price-min')
+        search_max_price = request.POST.get('price-max')
+
+        searched_bikes = Bikes.objects.filter(
+            Q(bike_brand = search_brand) |
+            Q(bike_model = search_model) |
+            Q(bike_location = search_location) |
+            Q(bike_year = search_year) |
+            Q(bike_type = search_type) |
+            Q(bike_price__gte = search_min_price) &
+            Q(bike_price__lte = search_max_price)
+        )
+
+        data = {
+            'searched_bikes': searched_bikes,
+            'bikes': bikes,
+            'brand': brand,
+            'model': model,
+            'location': location,
+            'year': year,
+            'type': type_of_bike
+        }
 
     return render(request, 'bike_zone/search.html', data)
 
