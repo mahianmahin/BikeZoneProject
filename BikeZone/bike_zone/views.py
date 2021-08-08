@@ -7,7 +7,33 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.db.models import Q
+from django.urls import reverse
 
+# for payment
+
+from sslcommerz_python.payment import SSLCSession
+from decimal import Decimal
+import socket
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def checkout(request):
+    mypayment = SSLCSession(sslc_is_sandbox=True, sslc_store_id='bikez611019424042b', sslc_store_pass='bikez611019424042b@ssl')
+
+    status_url = request.build_absolute_uri(reverse('complete'))
+    
+    mypayment.set_urls(success_url=status_url, fail_url=status_url, cancel_url=status_url, ipn_url=status_url)
+    mypayment.set_product_integration(total_amount=Decimal('20.20'), currency='BDT', product_category='Bike', product_name='demo-product', num_of_item=1, shipping_method='YES', product_profile='None')
+
+    mypayment.set_customer_info(name='John Doe', email='johndoe@email.com', address1='demo address', address2='demo address 2', city='Dhaka', postcode='1207', country='Bangladesh', phone='01711111111')
+    mypayment.set_shipping_info(shipping_to='demo customer', address='demo address', city='Dhaka', postcode='1209', country='Bangladesh')
+
+    response_data = mypayment.init_payment()
+
+    return redirect(response_data['GatewayPageURL'])
+
+def complete(request):
+    return render(request, 'bike_zone/checkout.html')
 
 def home(request):
     bikes = Bikes.objects.all()

@@ -1,31 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Accept a card payment</title>
-    <meta name="description" content="A demo of a card payment on Stripe" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% extends 'bike_zone/base.html' %}
+{% load static %}
 
-    <link rel="stylesheet" href="global.css" />
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-    <script src="/client.js" defer></script>
-  </head>
+{% block title %} Dashboard - User | BikeZone {% endblock title %}
 
-  <body>
-    <!-- Display a payment form -->
-    <form id="payment-form">
-      <div id="card-element"><!--Stripe.js injects the Card Element--></div>
-      <button id="submit">
-        <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text">Pay now</span>
-      </button>
-      <p id="card-error" role="alert"></p>
-      <p class="result-message hidden">
-        Payment succeeded, see the result in your
-        <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay
-        again.
-      </p>
-    </form>
-  </body>
-</html>
+{% block content %}
+
+        {% include 'bike_zone/messages.html' %}
+
+        <header class="notIndex">
+            {% include 'bike_zone/navbar.html' %}
+
+            <!-- =============================== Scroll to top button section ===================== -->
+
+            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <!-- =============================== Scroll to top button section ===================== -->
+        
+
+            <div class="container hero-section">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 hero-txt-section-header text-white d-flex justify-content-center">
+                        <h1 style="font-weight: bold; font-size: 30px;">DASHBOARD</h1><br>
+                    </div>
+
+            <!-- ================================= Hero section =========================-->
+        </header>
+
+        <!--========================= Main body starts from here ===========================-->
+
+        <div class="container">
+            <!-- =============== Latest bikes section ==================== -->
+            <section class="mt-5 mx-2">
+                <span class="section-header mt-5">Payment <span style="color: green;">Succeeded</span></span>
+                <p class="my-3">Hey <b>{{request.user}}</b>, you've successfully made your payment. Thanks for being with us.</p>
+
+                
+            </section>
+
+            <!-- =============== Latest bikes section ==================== -->
+        </div>
+
+{% endblock content %}
+

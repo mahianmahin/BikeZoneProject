@@ -24,6 +24,7 @@ LOGIN_REDIRECT_URL = 'dashboard'
 INSTALLED_APPS = [
     'material',
     'material.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -41,6 +42,39 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google'
 ]
+
+MATERIAL_ADMIN_SITE = {
+    'HEADER':  ('BikeZone Administration'),  # Admin site header
+    'TITLE':  ('BikeZone Administration'),  # Admin site title
+    'FAVICON':  'bike_zone/img/icon-bike.ico',  # Admin site favicon (path to static should be specified)
+    'MAIN_BG_COLOR':  'black',  # Admin site main color, css color should be specified
+    'MAIN_HOVER_COLOR':  'red',  # Admin site main hover color, css color should be specified
+    'PROFILE_PICTURE':  'bike_zone/img/avatar/avatar-mahin.jpg',  # Admin site profile picture (path to static should be specified)
+    'PROFILE_BG':  'bike_zone/img/bike-3.jpg',  # Admin site profile background (path to static should be specified)
+    'LOGIN_LOGO':  'bike_zone/img/avatar/avatar-mahin.jpg',  # Admin site logo on login page (path to static should be specified)
+    'LOGOUT_BG':  'bike_zone/img/bike-2.jpg',  # Admin site background on login/logout pages (path to static should be specified)
+    'SHOW_THEMES':  True,  #  Show default admin themes button
+    'TRAY_REVERSE': True,  # Hide object-tools and additional-submit-line by default
+    'SHOW_COUNTS': True, # Show instances counts for each model
+    'APP_ICONS': { 'Tea_App' : 'apps', 'Accounts': 'email' },
+}
+
+
+
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     'Portfolio_App',
+#     'django_cleanup.apps.CleanupConfig',
+  
+    
+    
+# ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,10 +173,6 @@ MEDIA_URL = '/images/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_ROOT = BASE_DIR / 'static/images'
-
-STRIPE_PUBLIC_KEY = ""
-STRIPE_SECRET_KEY = ""
-STRIPE_WEBHOOK_SECRET = ""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
