@@ -1,221 +1,336 @@
-{% extends 'bike_zone/base.html' %}
-{% load static %}
+{% extends 'bike_zone/base.html' %} {% load static %} {% block title %} Home |
+BikeZone {% endblock title %} {% block content %}
+<header class="index">
+  {% include 'bike_zone/messages.html' %} {% include 'bike_zone/navbar.html' %}
 
-{% block title %} Home | BikeZone {% endblock title %}
+  <!-- ================================= Hero section =========================-->
 
-{% block content %}
-        <header class="index">
-            {% include 'bike_zone/messages.html' %}
-            {% include 'bike_zone/navbar.html' %}
+  <!-- =============================== Scroll to top button section ===================== -->
 
-            <!-- ================================= Hero section =========================-->
+  <div
+    class="
+      scroll-to-top
+      d-flex
+      justify-content-center
+      align-items-center
+      shadow
+    "
+    id="sct"
+  >
+    <i class="fas fa-chevron-up"></i>
+  </div>
 
-            <!-- =============================== Scroll to top button section ===================== -->
+  <!-- =============================== Scroll to top button section ===================== -->
 
-            <div class="scroll-to-top d-flex justify-content-center align-items-center shadow" id="sct">
-                <i class="fas fa-chevron-up"></i>
+  <div class="container hero-section">
+    <div class="row">
+      <div
+        class="
+          col-md-6 col-sm-12
+          hero-txt
+          d-flex
+          flex-column
+          justify-content-center
+          text-white
+        "
+      >
+        <h1 style="font-weight: bold; font-size: 40px">WOW FACTOR STANDARD</h1>
+        <br />
+        <p style="font-size: 18px">
+          Allow us to guide you through the innovative stress <br />
+          free approach in finding your dream bike.
+        </p>
+        <a href="#"><button class="btn custom_btn">Read more</button></a>
+      </div>
+      <div
+        class="
+          col-md-6 col-sm-0
+          d-flex
+          justify-content-center
+          align-items-center
+          hero-search-box
+        "
+      >
+        {% comment %}
+        <div class="hero_search_box">
+          <form class="form-group" method="POST">
+            {% csrf_token %}
+            <input
+              type="text"
+              class="form-control text-field"
+              placeholder="Search by name"
+              name="name"
+            />
+            <select name="brand">
+              <option selected disabled>Brand</option>
+              {% for item in brand %}
+              <option>{{item}}</option>
+              {% endfor %}
+            </select>
+
+            <select name="model">
+              <option selected disabled>Model</option>
+              {% for item in model %}
+              <option>{{item}}</option>
+              {% endfor %}
+            </select>
+
+            <select name="location">
+              <option selected disabled>Location</option>
+              {% for item in location %}
+              <option>{{item}}</option>
+              {% endfor %}
+            </select>
+
+            <select name="year">
+              <option selected disabled>Year</option>
+              {% for item in year %}
+              <option>{{item}}</option>
+              {% endfor %}
+            </select>
+
+            <select name="type">
+              <option selected disabled>Select Type of Bikes</option>
+              {% for item in type %}
+              <option>{{item}}</option>
+              {% endfor %}
+            </select>
+            <br />
+            <p><b style="color: rgb(110, 110, 110)">Price</b></p>
+            <div
+              class="d-flex flex-row justify-content-between align-items-center"
+            >
+              <input
+                type="number"
+                class="price-class"
+                placeholder="Min range (USD)"
+                name="price-min"
+              />
+              <p><b>-</b></p>
+              <input
+                type="number"
+                class="price-class"
+                placeholder="Max range (USD)"
+                name="price-max"
+              />
             </div>
-
-            <!-- =============================== Scroll to top button section ===================== -->
-
-            <div class="container hero-section">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 hero-txt d-flex flex-column justify-content-center text-white">
-                        <h1 style="font-weight: bold; font-size: 40px;">WOW FACTOR STANDARD</h1><br>
-                        <p style="font-size: 18px;">Allow us to guide you through the innovative stress <br>
-                        free approach in finding your dream bike.</p>
-                        <a href="#"><button class="btn custom_btn">Read more</button></a>
-                    </div>
-                    <div class="col-md-6 col-sm-0  d-flex justify-content-center align-items-center hero-search-box">
-                        <div class="hero_search_box">
-                            <form class="form-group">
-                                <input type="text" class="form-control text-field" placeholder="Search by name">
-                                <select>
-                                    <option selected disabled>Brand</option>
-                                    {% for item in brand %}
-                                    <option>{{item}}</option>
-                                    {% endfor %}
-                                </select>
-                                
-                                <select>
-                                    <option selected disabled>Model</option>
-                                    {% for item in model %}
-                                    <option>{{item}}</option>
-                                    {% endfor %}
-                                </select>
-                                
-                                <select>
-                                    <option selected disabled>Location</option>
-                                    {% for item in location %}
-                                    <option>{{item}}</option>
-                                    {% endfor %}
-                                </select>
-                                
-                                <select>
-                                    <option selected disabled>Year</option>
-                                    {% for item in year %}
-                                    <option>{{item}}</option>
-                                    {% endfor %}
-                                </select>
-                                
-                                <select>
-                                    <option selected disabled>Select Type of Bikes</option>
-                                    {% for item in type %}
-                                    <option>{{item}}</option>
-                                    {% endfor %}
-                                </select>
-                            
-                            </form><br>
-                            <p><b style="color: rgb(110, 110, 110);">Price</b></p>
-                            <div class="d-flex flex-row justify-content-between align-items-center">
-                                <input type="number" class="price-class" placeholder="Min range (USD)">
-                                <p><b>-</b></p>
-                                <input type="number" class="price-class" placeholder="Max range (USD)">
-                            </div>
-                            <button class="hero_search_box-search-btn"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ================================= Hero section =========================-->
-        </header>
-
-        <!--========================= Main body starts from here ===========================-->
-
-        <div class="container">
-        <!-- ================ Featured bikes section ==================== -->
-            <section class="featured-bikes text-center section-margin">
-                <span class="section-header">Featured <span style="color: red;">Bikes</span></span>
-                <p>A world class collection of some awesome bikes for you to choose</p>
-
-                <div class="owl-carousel owl-theme featured-slider">
-                {% for bike in bikes %}
-                    {% if bike.bike_is_featured %}
-                        <div class="item">    
-                            <div class="card-body shadow">
-                                <div class="card-thumb">
-                                    <a href="{% url 'bike_details' bike.id %}"><img src="{{bike.bike_picture.url}}"></a>
-                                </div>
-                                <div class="card-details">
-                                    <a href="#"><div class="card-title">{{bike.bike_name}}</div></a>
-                                    <div class="card-location"><i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}</div>
-                                    <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                        <div class="card-shop">BikeShopBD</div>
-                                        <div class="card-price">$ {{bike.bike_price}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-
-                </div>
-            </section>
-
-            <!-- =============== Latest bikes section ==================== -->
-
-            <section class="latest-bikes text-center">
-                <span class="section-header mt-5">Latest <span style="color: red;">Bikes</span></span>
-                <br><br>
-                <p>A world class collection of some awesome bikes for you to choose</p>
-
-                <div class="latest-bikes-card-section d-flex flex-row flex-wrap mt-5 mb-5 justify-content-center">
-                {% for bike in bikes %}
-                    {% if bike.bike_is_latest %}
-                        <div class="shadow latest-bikes-card">
-                            <div class="latest-bike-thumb">
-                                <a href="{% url 'bike_details' bike.id %}"><img src="{{bike.bike_picture.url}}" alt="" class="img-thumbnail"></a>
-                            </div>
-                            <div class="card-details" id="latest-details">
-                                <a href="{% url 'bike_details' bike.id %}"><div class="card-title">{{bike.bike_name}}</div></a>
-                                <div class="card-location"><i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}</div>
-                                <div class="card-price-deatils mt-5 d-flex flex-row justify-content-between">
-                                    <div class="card-shop">BikeShopBD</div>
-                                    <div class="card-price">$ {{bike.bike_price}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-                </div>
-
-            </section>
-            <!-- =============== Latest bikes section ==================== -->
-
-
-            <!-- =============== Excutive Team section ==================== -->
-
-            <section class="text-center my-5">
-                <span class="section-header mt-5">Executive <span style="color: red;">Team</span></span>
-                <br><br>
-                <p>The people behind the way of your dream bike to you</p>
-
-                <div class="owl-carousel owl-theme">
-                    <div class="item d-flex justify-content-center">
-                        <div class="team-body shadow">
-                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-mahin.jpg' %}" class="img-thumbnail" alt=""></div>
-                            <div class="team-name mt-4"><h4>Mahian Mahin</h4></div>
-                            <div class="team-designation"><p>Web Developer</p></div>
-                            <div class="team-social-links d-flex flex-row justify-content-center">
-                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item d-flex justify-content-center">
-                        <div class="team-body shadow">
-                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-9.jpg' %}" class="img-thumbnail" alt=""></div>
-                            <div class="team-name mt-4"><h4>Angela Moss</h4></div>
-                            <div class="team-designation"><p>Web Developer</p></div>
-                            <div class="team-social-links d-flex flex-row justify-content-center">
-                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item d-flex justify-content-center">
-                        <div class="team-body shadow">
-                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-11.jpg' %}" class="img-thumbnail" alt=""></div>
-                            <div class="team-name mt-4"><h4>James Smith</h4></div>
-                            <div class="team-designation"><p>Graphics Designer</p></div>
-                            <div class="team-social-links d-flex flex-row justify-content-center">
-                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item d-flex justify-content-center">
-                        <div class="team-body shadow">
-                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-12.jpg' %}" class="img-thumbnail" alt=""></div>
-                            <div class="team-name mt-4"><h4>Trevor Philips</h4></div>
-                            <div class="team-designation"><p>Marketing Head</p></div>
-                            <div class="team-social-links d-flex flex-row justify-content-center">
-                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item d-flex justify-content-center">
-                        <div class="team-body shadow">
-                            <div class="team-avatar"><img src="{% static 'bike_zone/img/avatar/avatar-10.jpg' %}" class="img-thumbnail" alt=""></div>
-                            <div class="team-name mt-4"><h4>Patricia</h4></div>
-                            <div class="team-designation"><p>Support Manager</p></div>
-                            <div class="team-social-links d-flex flex-row justify-content-center">
-                                <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- =============== Excutive Team section ==================== -->
+            {% comment %}
+            <button class="hero_search_box-search-btn">
+              <i class="fas fa-search"></i>&nbsp;&nbsp;Search
+            </button>
+            {% endcomment %} {% comment %}
+            <input
+              type="submit"
+              value="SEARCH"
+              class="hero_search_box-search-btn"
+            />
+          </form>
         </div>
-{% endblock content %}
+        {% endcomment %}
+      </div>
+    </div>
+  </div>
 
-            
+  <!-- ================================= Hero section =========================-->
+</header>
+
+<!--========================= Main body starts from here ===========================-->
+
+<div class="container">
+  <!-- ================ Featured bikes section ==================== -->
+  <section class="featured-bikes text-center section-margin">
+    <span class="section-header"
+      >Featured <span style="color: red">Bikes</span></span
+    >
+    <p>A world class collection of some awesome bikes for you to choose</p>
+
+    <div class="owl-carousel owl-theme featured-slider">
+      {% for bike in bikes %} {% if bike.bike_is_featured %}
+      <div class="item">
+        <div class="card-body shadow">
+          <div class="card-thumb">
+            <a href="{% url 'bike_details' bike.id %}"
+              ><img src="{{bike.bike_picture.url}}"
+            /></a>
+          </div>
+          <div class="card-details">
+            <a href="#"><div class="card-title">{{bike.bike_name}}</div></a>
+            <div class="card-location">
+              <i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}
+            </div>
+            <div
+              class="
+                card-price-deatils
+                mt-5
+                d-flex
+                flex-row
+                justify-content-between
+              "
+            >
+              <div class="card-shop">BikeShopBD</div>
+              <div class="card-price">$ {{bike.bike_price}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </section>
+
+  <!-- =============== Latest bikes section ==================== -->
+
+  <section class="latest-bikes text-center">
+    <span class="section-header mt-5"
+      >Latest <span style="color: red">Bikes</span></span
+    >
+    <br /><br />
+    <p>A world class collection of some awesome bikes for you to choose</p>
+
+    <div
+      class="
+        latest-bikes-card-section
+        d-flex
+        flex-row flex-wrap
+        mt-5
+        mb-5
+        justify-content-center
+      "
+    >
+      {% for bike in bikes %} {% if bike.bike_is_latest %}
+      <div class="shadow latest-bikes-card">
+        <div class="latest-bike-thumb">
+          <a href="{% url 'bike_details' bike.id %}"
+            ><img src="{{bike.bike_picture.url}}" alt="" class="img-thumbnail"
+          /></a>
+        </div>
+        <div class="card-details" id="latest-details">
+          <a href="{% url 'bike_details' bike.id %}"
+            ><div class="card-title">{{bike.bike_name}}</div></a
+          >
+          <div class="card-location">
+            <i class="fas fa-map-marker-alt"></i> {{bike.bike_location}}
+          </div>
+          <div
+            class="
+              card-price-deatils
+              mt-5
+              d-flex
+              flex-row
+              justify-content-between
+            "
+          >
+            <div class="card-shop">BikeShopBD</div>
+            <div class="card-price">$ {{bike.bike_price}}</div>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </section>
+  <!-- =============== Latest bikes section ==================== -->
+
+  <!-- =============== Excutive Team section ==================== -->
+
+  <section class="text-center my-5">
+    <span class="section-header mt-5"
+      >Executive <span style="color: red">Team</span></span
+    >
+    <br /><br />
+    <p>The people behind the way of your dream bike to you</p>
+
+    <div class="owl-carousel owl-theme">
+      <div class="item d-flex justify-content-center">
+        <div class="team-body shadow">
+          <div class="team-avatar">
+            <img
+              src="{% static 'bike_zone/img/avatar/avatar-mahin.jpg' %}"
+              class="img-thumbnail"
+              alt=""
+            />
+          </div>
+          <div class="team-name mt-4"><h4>Mahian Mahin</h4></div>
+          <div class="team-designation"><p>Web Developer</p></div>
+          <div class="team-social-links d-flex flex-row justify-content-center">
+            <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="item d-flex justify-content-center">
+        <div class="team-body shadow">
+          <div class="team-avatar">
+            <img
+              src="{% static 'bike_zone/img/avatar/avatar-9.jpg' %}"
+              class="img-thumbnail"
+              alt=""
+            />
+          </div>
+          <div class="team-name mt-4"><h4>Angela Moss</h4></div>
+          <div class="team-designation"><p>Web Developer</p></div>
+          <div class="team-social-links d-flex flex-row justify-content-center">
+            <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="item d-flex justify-content-center">
+        <div class="team-body shadow">
+          <div class="team-avatar">
+            <img
+              src="{% static 'bike_zone/img/avatar/avatar-11.jpg' %}"
+              class="img-thumbnail"
+              alt=""
+            />
+          </div>
+          <div class="team-name mt-4"><h4>James Smith</h4></div>
+          <div class="team-designation"><p>Graphics Designer</p></div>
+          <div class="team-social-links d-flex flex-row justify-content-center">
+            <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="item d-flex justify-content-center">
+        <div class="team-body shadow">
+          <div class="team-avatar">
+            <img
+              src="{% static 'bike_zone/img/avatar/avatar-12.jpg' %}"
+              class="img-thumbnail"
+              alt=""
+            />
+          </div>
+          <div class="team-name mt-4"><h4>Trevor Philips</h4></div>
+          <div class="team-designation"><p>Marketing Head</p></div>
+          <div class="team-social-links d-flex flex-row justify-content-center">
+            <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="item d-flex justify-content-center">
+        <div class="team-body shadow">
+          <div class="team-avatar">
+            <img
+              src="{% static 'bike_zone/img/avatar/avatar-10.jpg' %}"
+              class="img-thumbnail"
+              alt=""
+            />
+          </div>
+          <div class="team-name mt-4"><h4>Patricia</h4></div>
+          <div class="team-designation"><p>Support Manager</p></div>
+          <div class="team-social-links d-flex flex-row justify-content-center">
+            <a href="#" id="fb"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="linkedin"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =============== Excutive Team section ==================== -->
+</div>
+{% endblock content %}

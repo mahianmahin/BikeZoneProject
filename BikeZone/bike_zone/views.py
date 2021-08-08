@@ -2,13 +2,12 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
 from django.contrib import messages
-from .models import SiteUtils, Bikes
+from .models import SiteUtils, Bikes, Cart
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.db.models import Q
 
-# Create your views here.
 
 def home(request):
     bikes = Bikes.objects.all()
@@ -45,7 +44,8 @@ def home(request):
         else:
             type_of_bike.append(item.bike_type)
 
-    data = {
+    if request.method == "GET":
+        data = {
         'bikes': bikes,
         'brand': brand,
         'model': model,
@@ -53,7 +53,6 @@ def home(request):
         'year': year,
         'type': type_of_bike
     }
-
     # print("\n=======\n", year, "\n=======\n")
     # print("\n=======\n", type_of_bike, "\n=======\n")
 
@@ -113,11 +112,35 @@ def contact(request):
 
 def dashboard(request):
     if request.user.is_authenticated:
-        return render(request, 'bike_zone/dashboard.html')
+        cart = Cart.objects.filter(user_id = request.user)
+
+        data = {
+            'cart': cart
+        }
+
+        return render(request, 'bike_zone/dashboard.html', data)
 
     else:
         messages.warning(request, 'Login first to enter to the dashboard')
         return redirect('/login/')
+
+def add_to_cart(request, id):
+    cart_ins = Cart(
+        user_id = request.user,
+        products = Bikes.objects.get(pk=id)
+    )
+
+    cart_ins.save()
+    messages.success(request, 'Bike added to cart successfully!')
+
+    return redirect('/dashboard/')
+
+def delete_cart_item(request, id):
+    cart_ins = Cart.objects.filter( Q(user_id = request.user) & Q(products = Bikes.objects.get(pk=id)) )
+    cart_ins.delete()
+
+    messages.success(request, 'Item removed from your cart successfully!')
+    return redirect('/dashboard/')
 
 def search(request):
     bikes = Bikes.objects.all()
@@ -197,3 +220,5 @@ def search(request):
 
 def services(request):
     return render(request, 'bike_zone/services.html')
+
+

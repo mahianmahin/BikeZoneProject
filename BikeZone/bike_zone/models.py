@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 class SiteUtils(models.Model):
     about_text = RichTextField()
@@ -28,3 +29,9 @@ class Bikes(models.Model):
     bike_ignition = models.CharField(max_length = 20, null=True)
     bike_is_featured = models.BooleanField(default=False)
     bike_is_latest = models.BooleanField(default=False)
+
+class Cart(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    products = models.ForeignKey(Bikes, on_delete=models.CASCADE)
+
+    

@@ -38,32 +38,31 @@
 
                 <div class="row my-5">
                     <div class="col-sm-12 info-table">
+                    {% if cart %}
                         <table class="table table-hover">
                             <thead>
                               <tr>
                                 <th scope="col">Bike Name</th>
                                 <th scope="col">Price</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Actions</th>
                               </tr>
                             </thead>
                             <tbody>
+                            {% for item in cart %}
                               <tr>
-                                <td>Kawasaki Ninja</td>
-                                <td>$ 4,999</td>
-                                <td><button class="btn btn-dark view-btn">View</button></td>
+                                <td>{{item.products.bike_name}}</td>
+                                <td>$ {{item.products.bike_price}}</td>
+                                <td>
+                                  <a href="{% url 'checkout' %}"><button class="btn btn-dark view-btn">Checkout</button></a>
+                                  <a href="{% url 'delete_cart' item.products.id %}"><button class="btn btn-danger view-btn">Delete</button></a>
+                                </td>
                               </tr>
-                              <tr>
-                                <td>Kawasaki Ninja</td>
-                                <td>$ 4,999</td>
-                                <td><button class="btn btn-dark view-btn">View</button></td>
-                              </tr>
-                              <tr>
-                                <td>Kawasaki Ninja</td>
-                                <td>$ 4,999</td>
-                                <td><button class="btn btn-dark view-btn">View</button></td>
-                              </tr>
+                            {% endfor %}
                             </tbody>
                           </table>
+                    {% else %}
+                    <h4>Your cart is empty</h4>
+                    {% endif %}
                     </div>
                 </div>
             </section>

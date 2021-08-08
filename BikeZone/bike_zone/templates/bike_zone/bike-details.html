@@ -96,7 +96,7 @@
                             <span>{{bikes.bike_ignition}}</span>
                         </div>
                     </div>
-                    <a href="#"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add to Cart</button></a>
+                    <a href="{% url 'add_to_cart' bikes.id %}"><button class="btn btn-dark"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add to Cart</button></a>
                 </div>
             </section>
         </div>
